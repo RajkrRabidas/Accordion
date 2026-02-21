@@ -1,0 +1,92 @@
+/* Modern accordion styles */
+.faq {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a;
+}
+
+.faq-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0b1220;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 20px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.item-header:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.question {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b1220;
+}
+
+.chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: transform .28s ease, color .2s ease;
+}
+
+.item.open .chev {
+  transform: rotate(180deg);
+  color: #0f172a;
+}
+
+.item-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .36s cubic-bezier(.2, .8, .2, 1);
+  background: linear-gradient(180deg, rgba(246, 249, 255, 0.6), rgba(255, 255, 255, 0.6));
+}
+
+.item-panel.open {
+  max-height: 400px;
+}
+
+.panel-inner {
+  padding: 0 20px 18px 20px;
+  color: #334155;
+  line-height: 1.6;
+  font-size: 0.975rem;
+}
