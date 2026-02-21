@@ -14,17 +14,19 @@ const Accordion = () => {
     <div>
         <h1>Frequently Asked Questions</h1>
         <div className="accordion">
-            {data.map((item) => (
-                <div className="item" key={item.id}>
-                    <div className="title" onClick={() => handleSingalSelection(item.id)}>
-                        <h2>{item.queastion}</h2>
-                        <span>{selected === item.id ? '-' : '+'}</span>
+            {data && data.length > 0 ? (
+                data.map((dataItem) => (
+                    <div className='item' onClick={()=> handleSingalSelection(dataItem.id)}>
+                        <div className='title'>
+                            <h3>{dataItem.queastion}</h3>
+                            <span>+</span>
+                        </div>
+                        {
+                            selected === dataItem.id ? <div>{dataItem.answer}</div> : null
+                        }
                     </div>
-                    <div className={selected === item.id ? 'content show' : 'content'}> 
-                        {item.answer}
-                    </div>
-                </div>
-            ))}
+                ))
+            ) : "No data found"}
         </div>
     </div>
   )
